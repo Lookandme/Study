@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 
     public Transform Player { get; private set; }
     public ObjectPool ObjectPool { get; private set; }
+    public ParticleSystem EffectParticle;
+
     [SerializeField] private string playerTag = "Player";
 
     private void Awake()
@@ -14,5 +16,6 @@ public class GameManager : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag(playerTag).transform;
 
         ObjectPool = GetComponent<ObjectPool>();
+        EffectParticle = GameObject.FindGameObjectWithTag("Particle").GetComponent<ParticleSystem>();
     }
 }
