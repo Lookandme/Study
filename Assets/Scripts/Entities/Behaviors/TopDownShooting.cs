@@ -6,6 +6,7 @@ public class TopDownShooting : MonoBehaviour
     private Vector2 aimDirection = Vector2.right;
 
     [SerializeField] private Transform projectileSpawnPosition;
+    [SerializeField] private AudioClip shootingClip;
 
     private void Awake()
     {
@@ -55,6 +56,8 @@ public class TopDownShooting : MonoBehaviour
         attackController.InitializeAttack(RotateVector2(aimDirection, angle), RangedAttackSO);
 
         obj.SetActive(true);
+
+        if (shootingClip) SoundManager.PlayClip(shootingClip);
     }
 
     private static Vector2 RotateVector2(Vector2 v, float degree)
