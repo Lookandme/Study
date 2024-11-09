@@ -76,12 +76,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
     void ProcessWaveConditions()
     {
-        // % 는 나머지 연산자죠?
-        // 나머지 값에 따라 조건문을 주어서, 주기성이 있는 대상에 활용하기도 해요.
+        // % 는 나머지 연산자
+        // 나머지 값에 따라 조건문을 주어서, 주기성이 있는 대상에 활용
 
-        // 20 스테이지마다 이벤트가 발생해요.
+        // 20 스테이지마다 이벤트가 발생
         if (currentWaveIndex % 20 == 0)
         {
             RandomUpgrade();
@@ -115,7 +117,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    void SpawnEnemyAtPosition(int posIdx)
+    void SpawnEnemyAtPosition(int posIdx)       // 다시 살펴 볼것!!
     {
         int prefabIdx = Random.Range(0, enemyPrefebs.Count);
         GameObject enemy = Instantiate(enemyPrefebs[prefabIdx], spawnPositions[posIdx].position, Quaternion.identity);
@@ -153,6 +155,10 @@ public class GameManager : MonoBehaviour
     private void UpdateHealthUI()
     {
         hpGaugeSlider.value = playerHealthSystem.CurrentHealth / playerHealthSystem.MaxHealth;
+    }
+    private void UpdaetWaveUI()
+    {
+        waveText.text = (currentWaveIndex + 1).ToString();
     }
     private void GameOver()
     {
