@@ -37,7 +37,7 @@ public class ProjectileController : MonoBehaviour
             DestroyProjectile(transform.position, false);
         }
 
-        _rigidbody.velocity = _direction * _attackData.speed;
+        _rigidbody.velocity = _direction * _attackData.speed; // 이게 발사 부분
     }
     
     private void OnTriggerEnter2D(Collider2D collision)

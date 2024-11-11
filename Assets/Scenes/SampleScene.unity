@@ -268,11 +268,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &86047452 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3488683658982175108, guid: a738b03f57f60204aa2b3bebd7ebeca0, type: 3}
-  m_PrefabInstance: {fileID: 621546213}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &107013525
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,9 +489,13 @@ MonoBehaviour:
   currentWaveIndex: 0
   spawnInterval: 0.5
   enemyPrefebs:
-  - {fileID: 1591622250}
-  - {fileID: 86047452}
+  - {fileID: 4079989309037695842, guid: d5fd2f127f6c9904aaa150f2c3d06f04, type: 3}
+  - {fileID: 3488683658982175108, guid: a738b03f57f60204aa2b3bebd7ebeca0, type: 3}
   spawnPositionsRoot: {fileID: 1232476413}
+  rewards:
+  - {fileID: 1128822221057190101, guid: 2c0180d2caa24dd4d9fd79b358bb3d50, type: 3}
+  - {fileID: 7024584497826175352, guid: 82c55344815e4c645ae19c1a5eda6152, type: 3}
+  - {fileID: 8259036301617248530, guid: 7a822592b25d80e49923a66940ab6160, type: 3}
 --- !u!4 &253197284
 Transform:
   m_ObjectHideFlags: 0
@@ -8909,11 +8908,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494689624}
   m_CullTransparentMesh: 1
---- !u!1 &1591622250 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4079989309037695842, guid: d5fd2f127f6c9904aaa150f2c3d06f04, type: 3}
-  m_PrefabInstance: {fileID: 557797395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1651210932
 GameObject:
   m_ObjectHideFlags: 0

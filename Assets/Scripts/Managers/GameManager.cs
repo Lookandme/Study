@@ -11,6 +11,17 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public enum UpgradeOption
+    {
+        MaxHealth,
+        AttackPower,
+        Speed,
+        Knockback,
+        AttackDelay,
+        NumberOfProjectiles,
+        COUNT // COUNT는 실제 쓰이는 enum이 아니라 몇 개가 들어있는지에 대한 값임
+    }
+
     public Transform Player { get; private set; }
     public ObjectPool ObjectPool { get; private set; }
     public ParticleSystem EffectParticle;
@@ -32,6 +43,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Transform spawnPositionsRoot; // 몬스터 생성 위치 부모객체를 등록하고 생성된 몬스터는 자식객체로
     private List<Transform> spawnPositions = new List<Transform>();
+
+    [SerializeField] private List<GameObject> rewards = new List<GameObject>();
 
     private void Awake()
     {
@@ -139,7 +152,12 @@ public class GameManager : MonoBehaviour
 
     private void CreateReward()
     {
-        Debug.Log("CreateReward 호출");       // 22강에서 계속
+        // 5단계마다 리워드 얻음
+        int selectedRewardIndex = Random.Range(0, rewards.Count);
+        int randomPositionIndex = Random.Range(0, spawnPositions.Count);
+
+        GameObject obj = rewards[selectedRewardIndex];
+        Instantiate(obj, spawnPositions[randomPositionIndex].position, Quaternion.identity);
     }
 
     private void IncreaseSpawnPositions()
@@ -165,6 +183,7 @@ public class GameManager : MonoBehaviour
     {
         // 해당 UI 켜주기
        gameOverUI.SetActive(true);
+        StopAllCoroutines();
     }
 
     public void RestartGame()

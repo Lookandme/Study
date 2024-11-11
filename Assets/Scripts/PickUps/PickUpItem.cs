@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpItem : MonoBehaviour
+public abstract class PickUpItem : MonoBehaviour
 {
     [SerializeField] AudioClip pickUpSound;
 
@@ -14,7 +14,7 @@ public class PickUpItem : MonoBehaviour
         Destroy(gameObject);
     }
 
-    protected abstract void OnPickUp(GameObject gameObject);
+    protected abstract void OnPickUp(GameObject go);
     
         
 }
