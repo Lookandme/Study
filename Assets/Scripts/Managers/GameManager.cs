@@ -71,8 +71,9 @@ public class GameManager : MonoBehaviour
 
                 currentWaveIndex++;
 
-                yield return null;
+                
             }
+            yield return null;
         }
     }
 
@@ -117,7 +118,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    void SpawnEnemyAtPosition(int posIdx)       // 다시 살펴 볼것!!
+    void SpawnEnemyAtPosition(int posIdx)   // 다시 살펴 볼것!!
     {
         int prefabIdx = Random.Range(0, enemyPrefebs.Count);
         GameObject enemy = Instantiate(enemyPrefebs[prefabIdx], spawnPositions[posIdx].position, Quaternion.identity);
